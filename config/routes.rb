@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root to: "cowerkings#index"
 
   resources :cowerkings do
-    resources :bookings, only: [:show, :create, :new, :update, :edit]
+    resources :bookings, only: [:index, :show, :create, :new, :update, :edit]
   end
 
   resources :bookings, only: :delete
