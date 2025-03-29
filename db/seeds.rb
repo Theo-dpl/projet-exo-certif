@@ -22,6 +22,7 @@ p theo
 wagon = User.create!(email: "wagon@mail.com", password: "ouioui")
 p wagon
 
+
 cowerking = Cowerking.new(name: "Bureau du theo", price_per_day: 59, description: "Grand bureau avec deyx écrans", address: "Lille", photo: "https://imgs.search.brave.com/jF3YDcthdaUmw07UF1od74Ud9H62A-2vrCTqIfaCBR4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb2xp/dnlzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMy8wNC9u/b3ctY293b3JraW5n/LW1hcnNlaWxsZS0x/MDI0eDU3Ni53ZWJw", user: theo)
 if cowerking.save
   p cowerking.name
@@ -33,3 +34,9 @@ if cowerking.save
 end
 
 puts "Finished! Created #{Cowerking.count} cowerkings."
+
+
+booking = Booking.new(user: theo, cowerking: Cowerking.last, start_date: Date.today, end_date: (Date.today + 2), total_price: 23, status: "En cours")
+if booking.save
+  p booking.end_date
+end

@@ -239,6 +239,9 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
+    simple_form (5.3.1)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -284,7 +287,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bootstrap (~> 5.2)
+  bootstrap (~> 5.3.3)
   debug
   devise
   font-awesome-rails
@@ -294,6 +297,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.1)
   sassc-rails
+  simple_form
   sprockets-rails
   stimulus-rails
   turbo-rails

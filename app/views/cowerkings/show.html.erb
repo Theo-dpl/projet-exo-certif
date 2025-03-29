@@ -10,7 +10,10 @@
 
   <% if @cowerking.user == current_user %>
     <%# mettre les trucs pour modifier %>
+    <%= link_to "Modifier", edit_cowerking_path(params[:id])%>
+    <%= link_to "Supprimer", cowerking_path(params[:id]), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   <% else %>
     <%# mettre les trucs pour reserver %>
+    <p>prendre rdv</p>
   <% end %>
 </div>

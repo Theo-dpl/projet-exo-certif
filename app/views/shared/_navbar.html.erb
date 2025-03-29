@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= params[:action] == 'index' && params[:controller] == 'cowerkings' ? '' : 'mb-5'%>">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
@@ -15,11 +15,10 @@
             <%= link_to "Ajouter un cowerking", new_cowerking_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Voir mes réservations", cowerking_bookings_path, class: "nav-link" %>
+            <%= link_to "Mon dashboard", dashboard_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= link_to "ouiii" %>
-            <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
               <%# link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>

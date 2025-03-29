@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: "cowerkings#index"
 
+  get "dashboard", to: "pages#dashboard"
+
   resources :cowerkings do
-    resources :bookings, only: [:index, :show, :create, :new, :update, :edit]
+    resources :bookings, only: [ :create, :new, :update, :edit ]
   end
 
-  resources :bookings, only: :delete
+  resources :bookings, only: [ :show, :delete ]
 end
